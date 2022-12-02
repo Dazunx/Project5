@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" %>
 <%@page import="com.spring.music.MusicDAO, com.spring.music.MusicVO,java.util.*"%>
 <%@ page import="com.spring.music.MusicDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -70,7 +69,9 @@
 	<script>
 		function delete_ok(id){
 			var a = confirm("정말로 삭제하겠습니까?");
+/*
 			if(a) location.href='.jsp?id=' + id;
+*/
 		}
 	</script>
 </head>
@@ -105,11 +106,6 @@
 <hr>
 <h3>Playlist 1</h3>
 
-<%
-	MusicDAO musicDAO = new MusicDAO();
-	List<MusicVO> list = musicDAO.getMusicList();
-	request.setAttribute("list",list);
-%>
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
@@ -131,11 +127,11 @@
 		<td>${u.getGenre()}</td>
 		<td>${u.getChart()}</td>
 		<td>${u.getRegdate()}</td>
-		<td><a href="editform.jsp?id=${u.getSid()}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.getSid()}')">Delete</a></td>
+		<td><a href="editform/${u.sid}">Edit</a></td>
+		<td><a href="javascript:delete_ok('${u.sid}')">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
-<br/><a href="addpostform.jsp">Add New Music</a>
+<br/><button type="button" onclick="location.href='add'">ADD New Music</button>
 </body>
 </html>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- <%@page import="com.music.dao.MusicDAO, com.music.vo.MusicVO"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" %>
+ <%@page import="com.spring.music.MusicDAO, com.spring.music.MusicVO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
 %>
 
 <h1>음악 정보 수정</h1>
-<form:form modelAttribute="musicVO" action="../edit_ok" method="post" enctype="multipart/form-data">
-	<form:hidden path="seq"/>
+<form action="../edit_ok" method="post" enctype="multipart/form-data">
+	<form:hidden path="sid"/>
 	<input type="hidden" name="sid" value="<%=u.getSid()%>"/>
 	<table>
 		<tr><td>Title:</td><td><input type="text" name="title" value="<%= u.getTitle()%>"/></td></tr>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +15,7 @@
 		<tr><td>Album:</td><td><textarea cols="50" rows="5" name="album"></textarea></td></tr>
 		<tr><td>Genre:</td><td><input type="text" name="genre"/></td></tr>
 		<tr><td>Chart:</td><td><input type="text" name="chart"/></td></tr>
-		<tr><td><a href="posts.jsp">View All Records</a></td><td align="right"><input type="submit" value="Add Post"/></td></tr>
+		<tr><td><a href="list.jsp">View All Records</a></td><td align="right"><input type="submit" value="Add Post"/></td></tr>
 	</table>
 </form>
 

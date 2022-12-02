@@ -1,4 +1,4 @@
-package com.example.music;
+package com.spring.music;
 
 import org.springframework.stereotype.Repository;
 
