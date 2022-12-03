@@ -47,7 +47,6 @@ public class MusicDAO {
 
     public List<MusicVO> getMusicList(){
         String sql = "select * from Music order by sid asc";
-        System.out.println("hi");
         return jdbcTemplate.query(sql, new MusicRowMapper());
     }
 }
@@ -56,12 +55,13 @@ class MusicRowMapper implements RowMapper<MusicVO>{
     @Override
     public MusicVO mapRow(ResultSet rs, int rowNum) throws SQLException {
         MusicVO vo = new MusicVO();
-        vo.setSid(rs.getInt("sid"));
-        vo.setTitle(rs.getString("title"));
-        vo.setArtist(rs.getString("artist"));
-        vo.setAlbum(rs.getString("album"));
-        vo.setGenre(rs.getString("genre"));
-        vo.setChart(rs.getString("chart"));
+        vo.setSid(rs.getInt("Sid"));
+        vo.setTitle(rs.getString("Title"));
+        vo.setArtist(rs.getString("Artist"));
+        vo.setAlbum(rs.getString("Album"));
+        vo.setGenre(rs.getString("Genre"));
+        vo.setChart(rs.getString("Chart"));
+        vo.setRegdate(rs.getDate("Regdate"));
         return vo;
     }
 }

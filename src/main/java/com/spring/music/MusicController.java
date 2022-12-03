@@ -25,6 +25,7 @@ public class MusicController {
 
     @RequestMapping(value = "/addok", method = RequestMethod.POST)
     public String addPostOK(MusicVO vo){
+        System.out.println("데이터 확인" + vo.getTitle());
         int i= musicService.insertMusic(vo);
         if(i==0)
             System.out.println("데이터 추가 실패");
@@ -36,7 +37,7 @@ public class MusicController {
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id,  Model model){
         MusicVO musicVO = musicService.getMusic(id);
-        model.addAttribute("u",musicVO);
+        model.addAttribute("musicVO",musicVO);
         return "editform";
     }
 

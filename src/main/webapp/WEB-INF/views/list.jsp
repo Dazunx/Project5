@@ -6,11 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Playlist</title>
 	<style>
 		/* Remove the navbar's default margin-bottom and rounded borders */
@@ -69,9 +68,7 @@
 	<script>
 		function delete_ok(id){
 			var a = confirm("정말로 삭제하겠습니까?");
-/*
-			if(a) location.href='.jsp?id=' + id;
-*/
+			if(a) location.href='deleteok/' + id;
 		}
 	</script>
 </head>
